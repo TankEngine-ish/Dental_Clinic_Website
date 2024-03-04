@@ -146,7 +146,7 @@
   // :: 12.0 ScrollUp Active Code
   if($.fn.scrollUp) {
     dento_window.scrollUp({
-      scrollSpeed: 2000,
+      scrollSpeed: 500,
       scrollText: '<i class="arrow_up"</i>'
     });
   }
