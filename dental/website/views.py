@@ -10,6 +10,16 @@ def contact(request):
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
+
+        send_mail(
+            message_name, 
+            message, 
+            message_email,
+            ['plamendimitrov0308@yahoo.com'],
+            fail_silently=False, # if the email is not sent, it will raise an error
+        )
+             
+         
         return render(request, 'contact.html', {'message_name': message_name})
     else:
         return render(request, 'contact.html', {})
