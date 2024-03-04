@@ -37,8 +37,8 @@
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>28 Jackson Street, Chicago, 7788569 USA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>info.dento@gmail.com</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>2042 High Street, Oakland CA 94601 </span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>plamen.dentist@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
@@ -62,7 +62,7 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
+            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -80,10 +80,10 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="#">Pages</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">- Home</a></li>
+                      <li><a href="{% url 'home' %}">- Home</a></li>
                       <li><a href="about.html">- About Us</a></li>
                       <li><a href="service.html">- Service</a></li>
                       <li><a href="pricing.html">- Pricing</a></li>
@@ -147,7 +147,7 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Contact</li>
             </ol>
           </nav>
@@ -179,9 +179,6 @@
             <h5>Phone</h5>
             <p>+84. 2252. 2250. 122</p>
 
-            <h5>Fax</h5>
-            <p>+84. 2252. 2250. 125</p>
-
             <h5>Email</h5>
             <p class="mb-0">plamen.dentist@gmail.com</p>
           </div>
@@ -196,7 +193,8 @@
               <div class="line"></div>
             </div>
             <!-- Form -->
-            <form action="#" method="post">
+            <form action="{% url 'contact' %}" method="post">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-lg-6">
                   <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
@@ -284,7 +282,7 @@
             <!-- Widget Title -->
             <h5 class="widget-title">Newsletter</h5>
 
-            <p>We will send out weekly newest article and some great offers</p>
+            <p>We will send out weekly articles and dental tips!</p>
             <!-- Newsletter Form -->
             <div class="footer-newsletter-form">
               <form action="#" method="post">
