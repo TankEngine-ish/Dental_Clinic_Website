@@ -15,7 +15,7 @@ def contact(request):
             message_name, 
             message, 
             message_email,
-            ['dripsterg@gmail.com'],
+            ['e-mail'],
             fail_silently=False, # if the email is not sent, it will raise an error
         )
              
