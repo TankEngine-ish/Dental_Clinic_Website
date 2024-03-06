@@ -5,6 +5,7 @@
 ### 
 Name of my virtual env.
 virtual
+env
 
 ### Django ###
 *.log
